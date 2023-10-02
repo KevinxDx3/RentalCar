@@ -10,6 +10,7 @@ import {Clientes} from './app/screen/Clientes';
 import { Loguin } from './app/screen/Loguin';
 import { Reservas } from './app/screen/Reservas';
 import { Menu } from './app/screen/Menu';
+import {CreateClientes} from './app/screen/CreateClientes';
 
 
 
@@ -27,6 +28,8 @@ export default function App() {
         <Stack.Screen name="Autos" component={Autos} />
         <Stack.Screen name="Reservas" component={Reservas} />
         <Stack.Screen name="Menu" component={Menu}/>
+        <Stack.Screen name="CrearClientes" component={CreateClientes}/>
+
       </Stack.Navigator>
     </NavigationContainer>
 
