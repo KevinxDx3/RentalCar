@@ -15,7 +15,7 @@ import {
 
 const Separator = () => <View style={styles.separator} />;
 
-export const Menu = () => {
+export const Menu = (props) => {
 
 
     return(   
@@ -32,7 +32,7 @@ export const Menu = () => {
           </Text>
           <Button
             title="CLIENTES"
-            onPress={() => Alert.alert('Simple Button pressed')}
+            onPress={()=>{props.navigation.navigate("Clientes")}}
           />
         </View>
         <Separator />
@@ -43,7 +43,7 @@ export const Menu = () => {
           <Button
             title="Automoviles"
             color="gray"
-            onPress={() => Alert.alert('Button with adjusted color pressed')}
+            onPress={()=>{props.navigation.navigate("Autos")}}
           />
         </View>
         <Separator />
@@ -54,7 +54,7 @@ export const Menu = () => {
           <Button
             title="reservas"
             color="green"
-            onPress={() => Alert.alert('Button with adjusted color pressed')}
+            onPress={()=>{props.navigation.navigate("Reservas")}}
           />
         </View>
         <Separator />
@@ -62,7 +62,7 @@ export const Menu = () => {
           <Button
             title="SALIR"
             color="red"
-            onPress={() => Alert.alert('Button with adjusted color pressed')}
+            onPress={()=>{props.navigation.navigate("Login")}}
           />
         </View>
        
