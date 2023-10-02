@@ -22,10 +22,14 @@ export default function App() {
     
     <NavigationContainer>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <Stack.Navigator initialRouteName="Clientes">
 =======
       <Stack.Navigator initialRouteName="Login">
 >>>>>>> 47e8a0222456d3275781ac35af5fa1ef3089cbe5
+=======
+      <Stack.Navigator initialRouteName="Menu">
+>>>>>>> parent of 47e8a02 (Login - Navigation)
         <Stack.Screen name="Login" component={Loguin} />
         <Stack.Screen name="Clientes" component={Clientes} />
         <Stack.Screen name="Autos" component={Autos} />

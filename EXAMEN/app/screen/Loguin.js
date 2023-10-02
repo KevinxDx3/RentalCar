@@ -3,40 +3,22 @@ import { StyleSheet, Text, View, _View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import {app} from '../../credenciales';
-import {getAuth, signInWithEmailAndPassword} from 'firebase/auth';
-const auth =getAuth(app);
-
 
 
 import React, { useState } from "react";
 import {
+
+
   Image,
   TextInput,
   Button,
   TouchableOpacity,
-  Alert
 } from "react-native";
 
-export const Loguin = (props) => {
+export const Loguin = () => {
 
-    //variables
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-    const Logueo = async()=>{
-      try{
-
-        await signInWithEmailAndPassword(auth, email, password);
-        Alert.alert('Iniciando Sesion', 'Accediendo.....')
-        props.navigation.navigate('Menu')
-        
-
-      }catch (error){
-        console.log(error);
-      }
-    }
-
 
     return(
      <View style={styles.container}>
@@ -60,9 +42,9 @@ export const Loguin = (props) => {
         /> 
       </View> 
       <TouchableOpacity>
-        <Text style={styles.forgot_button}>Olvidaste tu contrase</Text> 
+        <Text style={styles.forgot_button}>Forgot Password?</Text> 
       </TouchableOpacity> 
-      <TouchableOpacity style={styles.loginBtn} onPress={Logueo}>
+      <TouchableOpacity style={styles.loginBtn}>
         <Text style={styles.loginText}>LOGIN</Text> 
       </TouchableOpacity> 
     </View>
