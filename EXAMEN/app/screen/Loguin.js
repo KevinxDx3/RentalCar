@@ -3,9 +3,9 @@ import { StyleSheet, Text, View, _View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import {app} from '../../credenciales';
+import {firebase} from '../../credenciales';
 import {getAuth, signInWithEmailAndPassword} from 'firebase/auth';
-const auth =getAuth(app);
+const auth =getAuth(firebase);
 
 
 

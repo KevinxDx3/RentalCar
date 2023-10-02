@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, _View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import {firebase} from '../../credenciales'
 
 import { app } from '../../credenciales';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
@@ -28,7 +29,30 @@ export const CreateClientes = () =>
     Email: "",
     Direccion: "",
     Telefono: "",
-  })
+  });
+
+  const handleChangeText = (name, value) =>{
+    setState({...state, [name]: value});
+  };
+
+  const saveNewUser =async() => {
+    if (state.name == ''){
+      alert('Ingrese Cedula porfavor')
+    }else{
+      await firebase.db.collection('users').add({
+        cedula: state.cedula,
+        Nombre: state.Nombre,
+        Apellido: state.Apellido,
+        Ciudad: state.Ciudad,
+        Email: state.Email,
+        Direccion: state.Direccion,
+        Telefono: state.Telefono,
+      })
+      alert('guardado')
+    }
+
+    
+  };
 
   return (
 
@@ -42,7 +66,8 @@ export const CreateClientes = () =>
           style={styles.TextInput}
           placeholder="Cedula"
           placeholderTextColor="#003f5c"
-          secureTextEntry={true}
+          onChangeText={(value) => handleChangeText('cedula',value)}
+  
 
         />
 
@@ -55,7 +80,8 @@ export const CreateClientes = () =>
           style={styles.TextInput}
           placeholder="Nombre"
           placeholderTextColor="#003f5c"
-          secureTextEntry={true}
+          onChangeText={(value) => handleChangeText('Nombre',value)}
+
 
         />
 
@@ -67,7 +93,8 @@ export const CreateClientes = () =>
           style={styles.TextInput}
           placeholder="Apellido"
           placeholderTextColor="#003f5c"
-          secureTextEntry={true}
+          onChangeText={(value) => handleChangeText('Apellido',value)}
+
 
         />
 
@@ -79,7 +106,8 @@ export const CreateClientes = () =>
           style={styles.TextInput}
           placeholder="Ciudad"
           placeholderTextColor="#003f5c"
-          secureTextEntry={true}
+          onChangeText={(value) => handleChangeText('Ciudad',value)}
+
 
         />
 
@@ -91,7 +119,8 @@ export const CreateClientes = () =>
           style={styles.TextInput}
           placeholder="Email"
           placeholderTextColor="#003f5c"
-          secureTextEntry={true}
+          onChangeText={(value) => handleChangeText('Email',value)}
+
 
         />
 
@@ -103,7 +132,8 @@ export const CreateClientes = () =>
           style={styles.TextInput}
           placeholder="Direccion"
           placeholderTextColor="#003f5c"
-          secureTextEntry={true}
+          onChangeText={(value) => handleChangeText('Direccion',value)}
+
 
         />
 
@@ -115,7 +145,7 @@ export const CreateClientes = () =>
           style={styles.TextInput}
           placeholder="Telefono"
           placeholderTextColor="#003f5c"
-          secureTextEntry={true}
+          onChangeText={(value) => handleChangeText('Telefono',value)}
 
         />
 
@@ -123,7 +153,7 @@ export const CreateClientes = () =>
 
       <View>
         <Button
-          
+          onPress={()=>{saveNewUser()}}
           title="agregar"
           color="#841584"
           accessibilityLabel="Learn more about this purple button"

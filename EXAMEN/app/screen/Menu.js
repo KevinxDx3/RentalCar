@@ -28,7 +28,7 @@ export const Menu = (props) => {
              <Separator />
         <View>
           <Text style={styles.title}>
-            Este modulo permite la administracion de los clientes de la empresa
+            LISTA DE CLIENTES
           </Text>
           <Button
             title="CLIENTES"
@@ -38,7 +38,7 @@ export const Menu = (props) => {
         <Separator />
         <View>
           <Text style={styles.title}>
-            Este modulo permite ver, editar, borrar y añadir automoviles.
+            LISTA DE AUTOMOVILES
           </Text>
           <Button
             title="Automoviles"
@@ -49,7 +49,7 @@ export const Menu = (props) => {
         <Separator />
         <View>
           <Text style={styles.title}>
-            Este modulo contiene las reservaciones de los autos, ademas de poder crear las mismas.
+            LISTA DE RESERVAS
           </Text>
           <Button
             title="reservas"
