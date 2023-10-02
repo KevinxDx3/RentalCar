@@ -1,22 +1,10 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import {TableExample} from '../screen/TableExample';
-import {
-    StyleSheet,
-    Button,
-    View,
-    SafeAreaView,
-    Text,
-    Alert,
-  } from 'react-native';
-
-
+import { StyleSheet } from 'react-native';
 import { DataTable } from 'react-native-paper';
-export const Clientes = () => {
 
-    return (
-        <DataTable style={styles.container}>
+const TableExample = () => {
+return (
+	<DataTable style={styles.container}>
 	<DataTable.Header style={styles.tableHeader}>
 		<DataTable.Title>Name</DataTable.Title>
 		<DataTable.Title>Favourite Food</DataTable.Title>
@@ -44,18 +32,16 @@ export const Clientes = () => {
 		<DataTable.Cell>24</DataTable.Cell>
 	</DataTable.Row>
 	</DataTable>
-      );
+);
+};
 
-}
-
-
+export default TableExample;
 
 const styles = StyleSheet.create({
-    container: {
-        padding: 15,
-    },
-    tableHeader: {
-        backgroundColor: '#DCDCDC',
-    },
-    });
-    
+container: {
+	padding: 15,
+},
+tableHeader: {
+	backgroundColor: '#DCDCDC',
+},
+});
